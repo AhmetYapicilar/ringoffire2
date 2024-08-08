@@ -1,0 +1,17 @@
+ngOnInit():void {
+    this.newGame();
+    this.route.params.subscribe((params) => {
+      console.log(params['id']);
+
+      this.unsubSingle = onSnapshot(this.getSingleDocRef(params['id']), (game) => {
+        console.log(game);
+      })
+
+    //   this.items$ = collectionData(this.getGamesRef());
+    // const items = this.items$.subscribe((games: any) => {
+    //   games.forEach((element: any) => {
+    //     console.log('Game update', element);
+    //   });
+    // })
+    })
+    }
